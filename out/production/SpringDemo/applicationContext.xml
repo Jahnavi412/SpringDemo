@@ -8,11 +8,15 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Define your beans here -->
+    <!-- Define the dependency -->
 
+    <bean id="myFortune" class="com.spring.app.HappyFortuneService">
 
+    </bean>
 
     <bean id="myCoach" class="com.spring.app.BaseballCoach">
-
+        <!-- setup a construtor injection-->
+        <constructor-arg ref="myFortune"/>
     </bean>
     
 </beans>
